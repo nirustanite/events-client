@@ -1,4 +1,4 @@
-import {CHANGE_EVENT, SUBMIT_EVENT} from '../actions/events'
+import {CHANGE_EVENT, SUBMIT_EVENT, EVENT_DETAIL_FETCH,EVENT_UPDATE_SUCCESS} from '../actions/events'
 
 const initialState =  {
     name: '',
@@ -8,6 +8,8 @@ const initialState =  {
 
 const reducer = (state = initialState, action={}) => {
     switch(action.type){
+        case EVENT_DETAIL_FETCH:
+            return action.event
         case CHANGE_EVENT:
             return {
                 ...state,
@@ -15,6 +17,8 @@ const reducer = (state = initialState, action={}) => {
             }
         case SUBMIT_EVENT:
             return initialState
+        case EVENT_UPDATE_SUCCESS:
+                return initialState
         default:
             return state
     }

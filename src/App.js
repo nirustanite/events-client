@@ -5,7 +5,7 @@ import store from './store';
 import {Provider} from 'react-redux';
 import {Route} from 'react-router-dom';
 import EventsListContainer from './components/EventsListContainer'
-import CreateEventFormContainer from './components/CreateEventFormContainer'
+import EventDetailsContainer from './components/EventDetailsContainer'
 
 class App extends React.Component {
   render(){
@@ -14,6 +14,7 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
              <Route path='/' exact component={EventsListContainer} />
+             <Route path='/event/:id' component={EventDetailsContainer} />
           </header>
         </div>
       </Provider>
